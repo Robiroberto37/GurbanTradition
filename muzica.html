@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzica Ritualică</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --culoare-primara: #3D2B1F;
+            --culoare-secundara: #6B4423;
+            --accent-auriu: #B2976D;
+            --fundal: #FFF5E6;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'MedievalSharp', cursive;
+            background: var(--fundal) url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAOVBMVEXu7u7k5OTj4+Pm5ubq6urp6ens7Ozt7e3w8PDx8fHv7+/19fX29vb4+Pj6+vr////y8vLr6+v39/fn5+e+7XwJAAAChElEQVR4nO3b63KCMBCGYRNCghwE5Cze/7VWrVq1Vtvp0MnM95szO3T6zLIsCwAAAAAAAAAAAAAAAIC/1LZt0zR1XZdlWRRFmqZxHIdh6Pu+67q2bVuWZRiGruuGYTiO47qu7/u+74dhGMdxkiRZlhVFUdd127Z93w/DME3TsiyXy+V6vT4ej+fz+Xq93u/3x+Ox7/uyLMuyrOu6bdthGMZxnOd5Xddt2/Z9P45j13Vt2zZNU9d1VVVlWRZFUVZlWVVVXddN07Rt23XdMAyfnztN07IsH5/f933btk3T1HVdVVVZlmVZFEVR5HmepWmapmmapl3X7fv++fHv9/t6vR7HcRzHtm3ruq6qqizLoiiyLEvTNE3TZVm+vt7v9/1+Px/Px3Hse9/3rusaY6y1xhhjzLquX1/v9/t2u53neRzHtm3rui7LMv8QQuR5vq7r9Xq93W7X6/V8Pp/P5+Px2Pd927amaYqiEEIIIZRSz+fz/X7fbren0+mr0VrrP0gpjTF/2rZtXdfj8Xg8Hr9KrbXWWmutlFJKWWvXdf2qXJblfD6fz+fj8bht27Ztxpjv0h9pmv5W/nw+r9fr+Xx+PB77vu/7vq7rsiy/lVprrbXWWmutlFprvSzL5XL5qvx4PO73+/V6PZ1O+75v2/Y5lFJKKbXWWmutlFJrrbXWWmutlFJKKaWUUkqttdZaa6211lprrbXWWmutlVJKKaWUUkqttdZaa6211lprrbXWWmutlVJKKaWUUkqttdZaa6211lprrbXWWmutlVJKKaWUUkqttdZaa6211lprrbXWWv8Dk1E4dXZx+8QAAAAASUVORK5CYII=');
+            color: var(--culoare-primara);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .content-section {
+            margin: 3rem 0;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px double var(--culoare-secundara);
+            border-radius: 5px;
+            padding: 2.5rem;
+            box-shadow: 10px 10px 0 var(--accent-auriu);
+        }
+
+        .section-title {
+            font-family: 'Eagle Lake', cursive;
+            font-size: 2.5rem;
+            color: var(--culoare-secundara);
+            border-bottom: 3px wavy var(--accent-auriu);
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border: 2px groove var(--accent-auriu);
+            filter: sepia(0.4) contrast(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .content-image:hover {
+            transform: scale(1.02) rotate(-0.5deg);
+            box-shadow: 8px 8px 15px rgba(0,0,0,0.3);
+            filter: sepia(0.2) contrast(1.2);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 3rem;
+            background: linear-gradient(to bottom, var(--culoare-primara), #2B1A10);
+            color: var(--accent-auriu);
+            text-decoration: none;
+            border: 2px inset var(--accent-auriu);
+            font-family: 'Eagle Lake', cursive;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, #2B1A10, var(--culoare-primara));
+        }
+
+        @media (max-width: 992px) {
+            .content-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-image {
+                height: 300px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-section">
+            <h2 class="section-title">Instrumente Tradiționale</h2>
+            <div class="content-gallery">
+                <img src="images/g1.jpg" alt="Cobza" class="content-image">
+                <img src="images/g2.jpg" alt="Fluier" class="content-image">
+                <img src="images/g3.jpg" alt="Tobe" class="content-image">
+            </div>
+            <p>Sunetele care acompaniază ritualul...</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Cântece de Leagan</h2>
+            <div class="content-gallery">
+                <img src="images/g4.jpg" alt="Cântăreți" class="content-image">
+                <img src="images/g5.jpg" alt="Cor" class="content-image">
+                <img src="images/g6.jpg" alt="Dans" class="content-image">
+                
+  <video width="640" height="360" controls>
+    <source src="videos/Tutorial Gurbanul rudarilor.mp4" type="video/mp4">
+    Browserul tău nu suportă redarea video.
+  </video>
+
+                
+            </div>
+            <p>Melodiile transmise din generație în generație...</p>
+        </div>
+
+        <center>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-music"></i>
+                Înapoi la Start
+            </a>
+        </center>
+    </div>
+</body>
+</html>
